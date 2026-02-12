@@ -4,10 +4,14 @@
 %%{init: {'theme': 'neutral'}}%%
 flowchart TD
 
-    A["Raw Airline Dataset\nInvistico_Airline.csv"]:::data --> B["Exploratory Data Analysis (EDA)"]:::eda
+    A["Raw Airline Dataset
+Invistico_Airline.csv"]:::data --> B["Exploratory Data Analysis (EDA)"]:::eda
 
     B --> C["Data Cleaning & Preprocessing"]:::process
-    C --> D["Feature Engineering\n• Service Scores\n• Delay Handling\n• Encoding"]:::feature
+    C --> D["Feature Engineering
+• Service Scores
+• Delay Handling
+• Encoding"]:::feature
 
     D --> E["Model Training"]:::model
     E --> E1["Logistic Regression"]:::modelAlt
@@ -22,18 +26,24 @@ flowchart TD
     E4 --> F
     E5 --> F
 
-    F --> G{"Best Model Selection\n(F1 Score & ROC-AUC)"}:::best
+    F --> G{"Best Model Selection
+(F1 Score & ROC-AUC)"}:::best
 
-    G --> H["Save Best Model\n+ Feature Pipeline"]:::save
+    G --> H["Save Best Model
++ Feature Pipeline"]:::save
 
-    H --> I["Model Explainability\n(SHAP)"]:::explain
+    H --> I["Model Explainability
+(SHAP)"]:::explain
 
     I --> J["Streamlit Application"]:::deploy
 
-    J --> J1["Single Prediction\n+ SHAP Explanation"]:::app
-    J --> J2["Batch Prediction\nCSV Upload & Download"]:::app
+    J --> J1["Single Prediction
++ SHAP Explanation"]:::app
+    J --> J2["Batch Prediction
+CSV Upload & Download"]:::app
 
-    J --> K["Business Insights\nCustomer Satisfaction Drivers"]:::business
+    J --> K["Business Insights
+Customer Satisfaction Drivers"]:::business
 
 
     %% COLOR STYLES (SOFT + PREMIUM)
