@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <!-- Demo button (link will be added later) -->
   <a href="https://airline-customer-satisfaction-python.streamlit.app/">
-    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Coming%20Soon-blue?style=for-the-badge">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-blue?style=for-the-badge">
   </a>
 </p>
+
 
 <p align="center">
   <i>
