@@ -287,7 +287,94 @@ The project includes a **production-ready Streamlit application** with the follo
 
 ## ▶️ How to Run the Project Locally
 
+Follow the steps below to set up and run the project on your local machine.
+
+---
+
 ### 1️⃣ Clone the Repository
+
 ```bash
-git clone <your-repository-url>
-cd airline-customer-satisfaction
+git clone https://github.com/VenkateshHJoshi/Airline-Customer-Satisfaction.git
+cd Airline-Customer-Satisfaction
+```
+
+### 2️⃣ Create and Activate a Virtual Environment
+It is recommended to use a virtual environment to manage dependencies.
+```bash
+python -m venv .venv
+```
+Activate the environment:
+- macOS / Linux
+```bash
+source .venv/bin/activate
+```
+- Windows
+```bash
+.venv\Scripts\activate
+```
+
+### 3️⃣ Install Required Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ (Optional) Train Models from Scratch
+If you want to retrain all models and reselect the best one:
+
+```bash
+python -m src.models.train_and_select_model
+```
+This will:
+
+- Train multiple models
+
+- Evaluate them using standard metrics
+
+- Select the best-performing model
+
+- Save the trained model and feature pipeline
+
+> ⚠️ If you skip this step, the pre-trained models included in the repository will be used.
+
+### 5️⃣ Run the Streamlit Application
+```bash
+streamlit run app/app.py
+```
+Once the app starts, open your browser and navigate to:
+```bash
+http://localhost:8501
+```
+You can now:
+
+- Perform single passenger predictions
+
+- Upload CSV files for batch predictions
+
+- View SHAP-based explanations for model decisions
+
+### 🤝 Contributing & Improving the Project
+If you find this project interesting and would like to improve or extend it, contributions are welcome.
+
+You can:
+
+- Add new features or advanced models
+
+- Improve feature engineering or evaluation strategies
+
+- Enhance the Streamlit UI/UX
+
+- Add monitoring, retraining, or deployment pipelines
+
+- Improve documentation or visualizations
+
+🚀 Get Started
+
+- Fork this repository
+
+- Create a new feature branch
+
+- Make your improvements
+
+- Submit a pull request
+
+Your contributions can help make this project even more robust and impactful.
