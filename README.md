@@ -10,9 +10,18 @@
 
 <p align="center">
   <!-- Demo button (link will be added later) -->
-  <a href="#">
+  <a href="https://airline-customer-satisfaction-python.streamlit.app/">
     <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Coming%20Soon-blue?style=for-the-badge">
   </a>
+</p>
+
+<p align="center">
+  <i>
+    ⚠️ Note: The Streamlit app may occasionally go to sleep due to inactivity.
+    If you see a message like <b>"This app has gone to sleep"</b>,
+    simply click <b>"Yes, get this app back up!"</b> to restart it.
+    This is normal behavior on Streamlit Cloud.
+  </i>
 </p>
 
 ---
