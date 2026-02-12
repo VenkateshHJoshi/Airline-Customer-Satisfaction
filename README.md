@@ -352,6 +352,8 @@ You can now:
 
 - View SHAP-based explanations for model decisions
 
+---
+
 ### 🤝 Contributing & Improving the Project
 If you find this project interesting and would like to improve or extend it, contributions are welcome.
 
