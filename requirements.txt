@@ -1,24 +1,12 @@
-# Core numerical & data handling
-numpy
-pandas
-
-# Visualization
-matplotlib
-seaborn
-
-# Machine Learning
-scikit-learn
-joblib
-
-# EDA & utilities
-scipy
-
-# Model explainability (later stage)
-shap
-
-# App / Deployment
-streamlit
-
-# Jupyter (optional but recommended)
-jupyter
-ipykernel
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.8.0
+xgboost==2.0.3
+joblib==1.4.2
+fastapi==0.110.0
+uvicorn==0.29.0
+python-multipart==0.0.9
+streamlit==1.32.0
+requests==2.31.0
+shap==0.45.0
+matplotlib==3.8.3
