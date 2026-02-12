@@ -111,23 +111,50 @@ Customer Satisfaction Drivers"]:::business
     classDef app fill:#F1F8E9,stroke:#7CB342,color:#33691E
     classDef business fill:#ECEFF1,stroke:#546E7A,color:#263238
 ```
-## 🔍 Exploratory Data Analysis (EDA)
+### 🔍 Exploratory Data Analysis (EDA)
 
-EDA was conducted to understand:
+EDA was conducted to understand overall data distribution, feature behavior,
+and their relationship with customer satisfaction.
 
-- Satisfaction distribution (class balance)
-- Impact of service ratings on satisfaction
-- Effect of departure and arrival delays
-- Differences between business and personal travel
+### 📊 Key Visualizations
+
+**1. Satisfaction Distribution (Class Balance)**  
+Helps identify class imbalance and guides metric selection (F1, ROC-AUC).
+
+![Satisfaction Distribution](reports/eda/satisfaction_distribution.png)
+
+---
+
+**2. Service Ratings vs Satisfaction**  
+Shows how service quality features (seat comfort, food, entertainment, etc.)
+influence customer satisfaction.
+
+![Service Ratings Impact](reports/eda/service_ratings_vs_satisfaction.png)
+
+---
+
+**3. Delay Impact Analysis**  
+Analyzes how departure and arrival delays affect dissatisfaction rates.
+
+![Delay Impact](reports/eda/delay_vs_satisfaction.png)
+
+---
+
+**4. Travel Type Comparison**  
+Compares satisfaction trends between business and personal travelers.
+
+![Travel Type Comparison](reports/eda/travel_type_satisfaction.png)
+
+---
 
 ### 🔑 Key Observations
 
-- Service-related features dominate satisfaction
+- Service-related features dominate satisfaction outcomes
 - Long delays strongly correlate with dissatisfaction
-- Business class passengers show higher satisfaction
+- Business class passengers show higher satisfaction levels
 - Loyal customers are significantly more satisfied
 
-> 📒 EDA notebook available at: `notebooks/01_eda.ipynb`
+> 📒 Detailed EDA notebook available at: `notebooks/01_eda.ipynb`
 
 ---
 
