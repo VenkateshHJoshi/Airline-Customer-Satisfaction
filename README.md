@@ -111,50 +111,23 @@ Customer Satisfaction Drivers"]:::business
     classDef app fill:#F1F8E9,stroke:#7CB342,color:#33691E
     classDef business fill:#ECEFF1,stroke:#546E7A,color:#263238
 ```
-### 🔍 Exploratory Data Analysis (EDA)
+## 🔍 Exploratory Data Analysis (EDA)
 
-EDA was conducted to understand overall data distribution, feature behavior,
-and their relationship with customer satisfaction.
+EDA was conducted to understand:
 
-### 📊 Key Visualizations
-
-**1. Satisfaction Distribution (Class Balance)**  
-Helps identify class imbalance and guides metric selection (F1, ROC-AUC).
-
-![Satisfaction Distribution](reports/eda/satisfaction_distribution.png)
-
----
-
-**2. Service Ratings vs Satisfaction**  
-Shows how service quality features (seat comfort, food, entertainment, etc.)
-influence customer satisfaction.
-
-![Service Ratings Impact](reports/eda/service_ratings_vs_satisfaction.png)
-
----
-
-**3. Delay Impact Analysis**  
-Analyzes how departure and arrival delays affect dissatisfaction rates.
-
-![Delay Impact](reports/eda/delay_vs_satisfaction.png)
-
----
-
-**4. Travel Type Comparison**  
-Compares satisfaction trends between business and personal travelers.
-
-![Travel Type Comparison](reports/eda/travel_type_satisfaction.png)
-
----
+- Satisfaction distribution (class balance)
+- Impact of service ratings on satisfaction
+- Effect of departure and arrival delays
+- Differences between business and personal travel
 
 ### 🔑 Key Observations
 
-- Service-related features dominate satisfaction outcomes
+- Service-related features dominate satisfaction
 - Long delays strongly correlate with dissatisfaction
-- Business class passengers show higher satisfaction levels
+- Business class passengers show higher satisfaction
 - Loyal customers are significantly more satisfied
 
-> 📒 Detailed EDA notebook available at: `notebooks/01_eda.ipynb`
+> 📒 EDA notebook available at: `notebooks/01_eda.ipynb`
 
 ---
 
@@ -203,13 +176,71 @@ ensure a fair and reliable selection process.
 
 ## 🔎 Model Explainability (SHAP)
 
-To ensure transparency and trust in predictions:
+To ensure transparency and trust in model predictions, **SHAP (SHapley Additive exPlanations)** was used
+to interpret both **global** and **local** model behavior.
 
-- SHAP explains **individual predictions**
-- Shows feature contributions (positive & negative impact)
-- Integrated directly inside the Streamlit application
+---
 
-This enables **business-friendly interpretability** and informed decision-making.
+### 📊 Global Feature Importance
+
+The following plot shows the **overall importance of features** across all predictions.
+Features at the top have the strongest influence on customer satisfaction.
+
+![SHAP Global Importance](reports/shap/shap_bar.png)
+
+---
+
+### 🧠 SHAP Summary Plot
+
+This plot provides a **holistic view** of how feature values impact predictions:
+
+- Color indicates feature value (low → high)
+- Position indicates impact on satisfaction prediction
+
+![SHAP Summary](reports/shap/shap_summary.png)
+
+---
+
+### 🔍 Feature-Level Dependence Analysis
+
+These plots illustrate **how specific features influence predictions** at different values.
+
+#### 1️⃣ Comfort Score Impact
+Shows how overall seat and comfort-related services affect satisfaction.
+
+![Comfort Score Dependence](reports/shap/dependence_Comfort_Score.png)
+
+---
+
+#### 2️⃣ Digital Experience Impact
+Represents the influence of online booking, Wi-Fi, and digital services.
+
+![Digital Experience Dependence](reports/shap/dependence_Digital_Experience_Score.png)
+
+---
+
+#### 3️⃣ Inflight Experience Impact
+Highlights the effect of entertainment, food, and onboard services.
+
+![Inflight Experience Dependence](reports/shap/dependence_Inflight_Experience_Score.png)
+
+---
+
+#### 4️⃣ Arrival Delay Impact (Log Scale)
+Demonstrates how increasing arrival delays sharply increase dissatisfaction.
+
+![Arrival Delay Dependence](reports/shap/dependence_Log_Arrival_Delay.png)
+
+---
+
+### 🔑 Key Explainability Insights
+
+- Comfort and inflight experience are the **strongest drivers** of satisfaction
+- Digital experience significantly affects customer perception
+- Even moderate arrival delays drastically reduce satisfaction
+- Service quality can partially offset delay-related dissatisfaction
+
+These insights make the model **business-interpretable**, enabling data-driven service improvements.
 
 ---
 
