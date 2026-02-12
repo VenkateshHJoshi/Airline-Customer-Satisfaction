@@ -111,3 +111,125 @@ Customer Satisfaction Drivers"]:::business
     classDef app fill:#F1F8E9,stroke:#7CB342,color:#33691E
     classDef business fill:#ECEFF1,stroke:#546E7A,color:#263238
 ```
+## 🔍 Exploratory Data Analysis (EDA)
+
+EDA was conducted to understand:
+
+- Satisfaction distribution (class balance)
+- Impact of service ratings on satisfaction
+- Effect of departure and arrival delays
+- Differences between business and personal travel
+
+### 🔑 Key Observations
+
+- Service-related features dominate satisfaction
+- Long delays strongly correlate with dissatisfaction
+- Business class passengers show higher satisfaction
+- Loyal customers are significantly more satisfied
+
+> 📒 EDA notebook available at: `notebooks/01_eda.ipynb`
+
+---
+
+## 🧠 Feature Engineering
+
+Industry-standard feature engineering techniques were applied:
+
+- Robust preprocessing using pipelines
+- Handling of categorical and numerical features
+- Delay-aware feature handling
+- Train/inference-safe transformations
+
+All transformations are stored inside a **single reusable feature pipeline**, ensuring
+consistency between training and inference.
+
+---
+
+## 🤖 Model Training & Evaluation
+
+Multiple models were trained and compared using consistent evaluation metrics to
+ensure a fair and reliable selection process.
+
+### 📊 Model Comparison Table
+
+| Model               | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|--------------------|----------|-----------|--------|----------|---------|
+| XGBoost            | 0.829    | 0.851     | 0.834  | 0.843    | 0.910   |
+| LightGBM           | 0.826    | 0.865     | 0.807  | 0.835    | 0.908   |
+| Random Forest      | 0.824    | 0.859     | 0.812  | 0.835    | 0.903   |
+| KNN                | 0.810    | 0.831     | 0.820  | 0.825    | 0.888   |
+| Decision Tree      | 0.812    | 0.853     | 0.793  | 0.822    | 0.878   |
+| Logistic Regression| 0.769    | 0.793     | 0.781  | 0.787    | 0.838   |
+| Linear SVM         | 0.766    | 0.790     | 0.780  | 0.785    | 0.834   |
+
+---
+
+## 🏆 Best Model Selection
+
+**XGBoost** was selected as the final model due to:
+
+- Highest F1 Score
+- Strong ROC-AUC performance
+- Stable results across multiple stress-test scenarios
+
+---
+
+## 🔎 Model Explainability (SHAP)
+
+To ensure transparency and trust in predictions:
+
+- SHAP explains **individual predictions**
+- Shows feature contributions (positive & negative impact)
+- Integrated directly inside the Streamlit application
+
+This enables **business-friendly interpretability** and informed decision-making.
+
+---
+
+## 🚀 Streamlit Application
+
+The project includes a **production-ready Streamlit application** with the following features:
+
+### 👤 Single Prediction
+
+- Manual passenger input
+- Satisfaction prediction (Satisfied / Dissatisfied)
+- SHAP explanation for that specific prediction
+
+### 📁 Batch Prediction
+
+- CSV file upload
+- Predict satisfaction for thousands of passengers
+- Download predictions instantly
+
+---
+
+## 🧰 Tech Stack
+
+### Languages & Core
+- Python 3.10+
+- NumPy
+- Pandas
+
+### Visualization
+- Matplotlib
+- Seaborn
+- SHAP
+
+### Machine Learning
+- Scikit-learn
+- XGBoost
+- LightGBM
+
+### Deployment
+- Streamlit
+- Joblib
+
+---
+
+## ▶️ How to Run the Project Locally
+
+### 1️⃣ Clone the Repository
+```bash
+git clone <your-repository-url>
+cd airline-customer-satisfaction
